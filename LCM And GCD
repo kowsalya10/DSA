@@ -1,0 +1,23 @@
+class Solution {
+    public static int gcd(int a,int b){
+        while(b!=0){
+            int temp=b;
+            b=a%b;
+            a=temp;
+        }
+        return a;
+    }
+    public static int lcm(int a,int b){
+        int ans=(a*b)/gcd(a,b);
+        return ans;
+        
+    }
+    public static int[] lcmAndGcd(int a, int b) {
+        int l=lcm(a,b);
+        int g=gcd(a,b);
+        int[] res=new int[2];
+        res[0]=l;
+        res[1]=g;
+        return res;
+    }
+}
